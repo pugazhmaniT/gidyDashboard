@@ -1,4 +1,11 @@
 Include set up , basic explanation of the project,What software is required .How to test the project in local .Include whatever required.Generate the fie immediately.# Gidy Audit Logs Dashboard
+## Dashboard Preview
+
+### Main Dashboard
+![Dashboard Screenshot 1](./Dashboard(1).jpeg)
+
+### Filtered Dashboard
+![Dashboard Screenshot 2](./Dashboard(2).jpeg)
 
 ## Project Overview
 
