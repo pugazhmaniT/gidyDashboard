@@ -2,6 +2,10 @@ import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import "./App.css";
 import catLogo from "./assets/cat.png";
+
+const API_URL =
+  process.env.REACT_APP_API_URL || "http://localhost:5000";
+
 function App() {
   const [logs, setLogs] = useState([]);
   const [page, setPage] = useState(1);
@@ -39,7 +43,7 @@ function App() {
   ) => {
     try {
       const url =
-        `http://localhost:5000/api/logs/read?page=${customPage}` +
+        `${API_URL}/api/logs/read?page=${customPage}` +
         `&search=${customSearch}` +
         `&role=${customRole}` +
         `&action=${customAction}` +
@@ -97,7 +101,7 @@ function App() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/logs/upload-file",
+        `${API_URL}/api/logs/upload-file`,
         formData
       );
 
@@ -141,13 +145,14 @@ function App() {
 
   return (
     <div className="container">
-<div className="header">
-  <img src={catLogo} alt="Cat Logo" className="logo" />
-  <h1 className="title">Gidy Audit Logs Dashboard</h1>
-  <p className="subtitle">
-    Security Monitoring • Threat Detection • Audit Analytics
-  </p>
-</div>
+      <div className="header">
+        <img src={catLogo} alt="Cat Logo" className="logo" />
+        <h1 className="title">Gidy Audit Logs Dashboard</h1>
+        <p className="subtitle">
+          Security Monitoring • Threat Detection • Audit Analytics
+        </p>
+      </div>
+
       {message && (
         <div className={`message-box ${messageType}`}>
           {message}
