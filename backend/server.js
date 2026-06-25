@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 });
 
 // Connect MongoDB
-console.log("Attempting to connect to:", process.env.MONGO_URI);
+console.log("Attempting MongoDB connection...");
 mongoose.connect(process.env.MONGO_URI, {
   retryWrites: true,
   w: "majority",
